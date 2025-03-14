@@ -20,9 +20,9 @@ def report_to_accountant(start, end, year):
 
     body_text = make_body(non_docs_expenses_dict)
 
-    sender = 'dannykrivaa@gmail.com'
-    to = 'dannykrivaa@hotmail.com'
-    cc = 'dannykrivaa@gmail.com'
+    sender = ''
+    to = ''
+    cc = ''
     subject = f'Income and Expenditure for {start}-{end}, {year}'
     body = f"""
     היי יאיר
