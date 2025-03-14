@@ -1,14 +1,3 @@
-"""
-pip install:
-- google-api-python-client
-- google-auth-httplib2
-- google-auth-oauthlib
-- streamlit
-- requests
-- python-dotenv
-- pymupdf
-"""
-
 import streamlit as st
 
 
