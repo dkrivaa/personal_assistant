@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+
 from expense_data import make_expense_pdf, make_non_docs_expense_dict, make_income_pdf
 from google_services import activate_services, send_email_with_buffers_attachments
 
@@ -8,6 +11,7 @@ def report_to_accountant(start, end, year):
     and sends the email, incl. two pdf (income and expenses) and adds the undocumented expenses
     to the text of the email
     """
+    load_dotenv()
 
     expense_buffer = make_expense_pdf()
     non_docs_expenses_dict = make_non_docs_expense_dict()
@@ -20,9 +24,9 @@ def report_to_accountant(start, end, year):
 
     body_text = make_body(non_docs_expenses_dict)
 
-    sender = ''
-    to = ''
-    cc = ''
+    sender = os.getenv('SENDER')
+    to = os.getenv('TO')
+    cc = os.getenv('CC')
     subject = f'Income and Expenditure for {start}-{end}, {year}'
     body = f"""
     היי יאיר
