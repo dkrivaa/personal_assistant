@@ -322,15 +322,8 @@ def get_upcoming_events(service, max_results=5):
         start = event['start'].get('dateTime', event['start'].get('date'))  # Handle all-day events
         print(f"Event: {event['summary']}")
         print(f"Start Time: {start}")
+        print(f'creator: {event['creator']}')
+        print(f'organizer: {event['organizer']}')
         print("-" * 50)
 
 
-if __name__ == '__main__':
-    # Activate the services
-    gmail_service, calendar_service = activate_services()
-
-    # Get unread messages
-    get_unread_messages(gmail_service)
-    # send_email_with_attachment(gmail_service, 'dannykrivaa@gmail.com', 'dannykrivaa@hotmail.com',
-    #                            'test email', 'This is the text of the second test email',
-    #                            "C:/Users/danny/Downloads/split_1.pdf")
